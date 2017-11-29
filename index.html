@@ -106,11 +106,11 @@
           window.location.assign("http://movil.mototaps.com/"+lang+"/dashboard/index/?"+params);
         }else{
           $.mobile.loading("hide");
-          alert('No dispone de conexion a internet, por favor verifique su conexion y vuelva a intentarlo.');
+          alert('Error 002:No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
         }
      }).fail(function(jqXHR, textStatus, errorThrown){
           $.mobile.loading("hide");
-          alert('No dispone de conexion a internet, por favor verifique su conexion y vuelva a intentarlo.');
+          alert('Error 001: No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
 
       }); 
     
