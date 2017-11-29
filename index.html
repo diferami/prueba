@@ -87,9 +87,34 @@
 <script language="JavaScript">
 
   function connect(lang) {
-    params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
-    window.location.assign("http://movil.mototaps.com/es/dashboard/index/?"+params);
-	 
+	alert ('uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version);
+    $.mobile.loading("show");
+    $.ajax({
+      type: 'GET',
+      url: "http://movil.mototaps.com/assets/connect/connect.php",
+      contentType: "application/json",
+      dataType: 'json',
+      jsonp : "callback",
+      jsonpCallback: 'jsonpCallback',
+      data : {cachehora : (new Date()).getTime()},
+      }).done(function(response){
+	    
+        params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
+		alert(response.state);
+		alert(params);
+		if(response.state === 'ok'){
+          $.mobile.loading("hide");
+          window.location.assign("http://movil.mototaps.com/"+lang+"/dashboard/index/?"+params);
+        }else{
+          $.mobile.loading("hide");
+          alert('Error 002:No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
+        }
+     }).fail(function(jqXHR, textStatus, errorThrown){
+          $.mobile.loading("hide");
+          alert('Error 001: No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
+
+      }); 
+    
   }
 
  
