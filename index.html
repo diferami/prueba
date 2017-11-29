@@ -97,7 +97,10 @@
       jsonpCallback: 'jsonpCallback',
       data : {cachehora : (new Date()).getTime()},
       }).done(function(response){
+	    
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
+		alert(response.state);
+		alert(params);
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
           window.location.assign("http://movil.mototaps.com/"+lang+"/dashboard/index/?"+params);
