@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id = "com.ec.mitaxijj.user"
-        version = "1.0.2">
+        id = "com.mmototaps.user"
+        version = "1.0.0">
 
-    <name>Mi Taxi JJ</name>
+    <name>Mototaps</name>
 
     <description>
-        Cooperativa JJ presenta su aplicación para solicitar servicio de taxi en Quito - Ecuador, fácil, rápido, eficente y seguro. by Geocommerce Cia. Ltda. Quito, Ecuador - 2014
+        Aplicación para solicitar servicio de motot taxi, fácil, rápido, eficente y seguro. by Good People Tecnologies - 2017
     </description>
 
-    <author href="http://www.geocommerce.com.ec" email="diego_ramirez_romero@hotmail.com">
-        Geocommerce Cia. Ltda. Quito, Ecuador - 2014
+    <author href="http://www.mototaps.com" email="diego_ramirez_romero@hotmail.com">
+        Good People Tecnologies - 2017
     </author>
 
     <!--
