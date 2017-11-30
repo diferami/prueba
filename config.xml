@@ -9,7 +9,7 @@
     <name>Mototaps</name>
 
     <description>
-        Aplicación para solicitar servicio de moto taxi, fácil, rápido, eficente y seguro. by Good People Tecnologies - 2017
+        Aplicación para solicitar servicio de motot taxi, fácil, rápido, eficente y seguro. by Good People Tecnologies - 2017
     </description>
 
     <author href="http://www.mototaps.com" email="diego_ramirez_romero@hotmail.com">
@@ -23,7 +23,8 @@ The "device" permission is required for the 'deviceready' event.
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/device" />
-
+	
+	<gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
 
 	<feature name="InAppBrowser">
       <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
