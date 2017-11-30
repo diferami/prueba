@@ -24,7 +24,8 @@ The "device" permission is required for the 'deviceready' event.
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/device" />
 	
-	<gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
+	
+	<gap:plugin name="org.apache.cordova.inappbrowser" />
 
 	<feature name="InAppBrowser">
       <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
