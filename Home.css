@@ -1,0 +1,76 @@
+
+/* Define default spinner */
+.ui-icon-loading {
+	background: url("files/resources/lib/jquerymobile/1.4.4/images/ajax-loader.gif") repeat scroll 0 0 / 46px 46px transparent!important;
+}
+/* mobilenavbar_6 */
+.Home_mobilenavbar_6 {
+
+}
+.Home_mobilenavbar_6 .ui-grid-a .ui-block-a {
+	clear:none;
+}
+.ui-footer .Home_mobilenavbar_6 ul li:last-child a {
+	margin-right: 1px !important;
+}
+.ui-header .Home_mobilenavbar_6 ul li:last-child a {
+	margin-right: -1px !important;
+}
+.Home_mobilenavbar_6 ul.ui-grid-duo li:nth-child(even) a {
+	margin-right: 1px !important;
+}
+/* mobilecontainer1 */
+.ui-content.Home_mobilecontainer1 {
+	padding: 15px 15px 15px 15px;
+}
+/* mobileworkarea_10*/
+.Home_mobileworkarea_10 {
+	background-color: transparent;
+	padding: 0px;
+}
+/* mobilelabel_11 */
+.Home_mobilelabel_11 {
+	text-decoration: none; font-weight: normal; font-style: italic; text-align: left; font-family: Helvetica; font-size: 16px;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilelabel_13 */
+.Home_mobilelabel_13 {
+	text-decoration: none; font-weight: normal; text-align: left; font-family: Helvetica; font-size: 14px;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilelabel_12 */
+.Home_mobilelabel_12 {
+	text-decoration: none; font-weight: normal; text-align: left; font-family: Helvetica; font-size: 14px;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilebutton_entrar */
+#Home_mobilebutton_entrar {
+
+}
+.ui-btn.Home_mobilebutton_entrar {
+	margin: 4px 5px 4px 5px;
+}
+/* mobilelink_15 */
+.Home_mobilelink_15 {
+	margin: 4px 0px 4px 0px;
+	display: block;
+	vertical-align: middle;
+	padding: 2px;
+	cursor: pointer;
+}
+.Home_mobilelink_15_link_wrapper > .Home_mobilelink_15,
+.Home_mobilelink_15_link_wrapper > .Home_mobilelink_15:hover,
+.Home_mobilelink_15_link_wrapper > .Home_mobilelink_15:active,
+.Home_mobilelink_15_link_wrapper > .Home_mobilelink_15:visited {
+	text-decoration: underline; font-weight: normal; font-style: italic; color: #2489ce; text-align: left; font-family: Helvetica; font-size: 16px;
+}
+/* mobilefooter1 */
+.Home_mobilefooter1 {
+	min-height:38px;
+}
