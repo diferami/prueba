@@ -11,6 +11,9 @@
     
 	<access origin="*" />
     
+	<preference name="phonegap-version" value="cli-6.5.0" />
+	<plugin name="cordova-plugin-inappbrowser" />
+	
 	<preference name="Fullscreen" value="true" />
     <preference name="WebViewBounce" value="true" />
 	<preference name="orientation" value="portrait" />

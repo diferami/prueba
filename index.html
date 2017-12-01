@@ -6,9 +6,6 @@
     <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
  
@@ -17,26 +14,31 @@
   
     <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
 
-
-<script type="text/javascript" charset="utf-8"> 
-
-	
-
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8"> 
 	var model;
 	var platform;
 	var version;
 	var uuid;
 
-	function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false); 
-    }
+	document.addEventListener("deviceready", onDeviceReady, false);
 
-	function onDeviceReady() { 
+    // device APIs are available
+    //
+    function onDeviceReady() {
 		model		=	device.model;
 		platform	=	device.platform;
 		version		=	device.version;
 		uuid		=	device.uuid;
-	}
+
+		var element = document.getElementById('deviceProperties');
+        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+                            'Device Cordova: '  + device.cordova  + '<br />' +
+                            'Device Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+    }
+
 
 </script> 
 
@@ -149,6 +151,7 @@
     </div>
 
 	<a onClick="window.open('http://movil.mototaps.com', '_system, 'location=yes');">......Enlace....</a>
+	<p id="deviceProperties">Loading device properties...</p>
 
   </div>
 
