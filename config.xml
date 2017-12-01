@@ -9,10 +9,12 @@
     
 	<content src="index.html" />
     
-	<access origin="*" />
-    
 	<preference name="phonegap-version" value="cli-6.5.0" />
 	<plugin name="cordova-plugin-inappbrowser" />
+
+	<plugin name="org.apache.cordova.inappbrowser" source="pgb" />
+
+
 	
 	<preference name="Fullscreen" value="true" />
     <preference name="WebViewBounce" value="true" />
@@ -23,5 +25,6 @@
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
 
+	<access origin="*" />
 
 </widget>
