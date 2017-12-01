@@ -1,13 +1,24 @@
 <widget id="com.mototaps.user" version="0.0.1">
-        <name>HelloWorld</name>
-        <description>
-            A sample Apache Cordova application that responds to the deviceready event.
-        </description>
-        <author email="dev@callback.apache.org" href="http://phonegap.com">
-            Apache Cordova Team
-        </author>
-        <content src="index.html" />
-        <access origin="*" />
-        <preference name="Fullscreen" value="true" />
-        <preference name="WebViewBounce" value="true" />
-    </widget>
+    <name>Mototaps</name>
+    <description>
+           Aplicación para solicitar servicio de Moto-Taxi, fácil, rápido, eficente y seguro. by Good People Tecnologies - 2017.
+    </description>
+    <author email="diferami@gmail.com" href="http://mototaps.com">
+            Good People Tecnologies - 2017
+    </author>
+    
+	<content src="index.html" />
+    
+	<access origin="*" />
+    
+	<preference name="Fullscreen" value="true" />
+    <preference name="WebViewBounce" value="true" />
+	<preference name="orientation" value="portrait" />
+	<preference name="fullscreen" value="true" />
+
+	<feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+
+
+</widget>
