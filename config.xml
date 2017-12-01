@@ -2,7 +2,7 @@
     <widget id=”com.mototaps.user” version=”1.0.0″ xmlns=”http://www.w3.org/ns/widgets” xmlns:cdv=”http://cordova.apache.org/ns/1.0″>
 		<name>MotoTaps</name>
 		<description>
-		 Aplicación para solicitar servicio de motot taxi, fácil, rápido, eficente y seguro. by Good People Tecnologies - 2017
+		 Aplicación para solicitar servicio de moto taxi, fácil, rápido, eficente y seguro. by Good People Tecnologies - 2017
 		</description>
 		<author email=”diferami@gmail.com” href=”http://cordova.io”>
 			by Good People Technologies - 2017
