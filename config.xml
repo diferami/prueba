@@ -12,7 +12,7 @@
 	<preference name="phonegap-version" value="cli-6.5.0" />
 	<plugin name="cordova-plugin-inappbrowser" />
 
-	<plugin name="org.apache.cordova.inappbrowser" source="pgb" />
+	<plugin name="org.apache.cordova.inappbrowser" />
 
 
 	
