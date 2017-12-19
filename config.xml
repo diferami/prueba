@@ -13,9 +13,14 @@
 		<access origin="https://www.ibm.com" />
 		<access origin="https://mototaps.com/*" />
 		<access origin="https://*.mototaps.com/*" />
+		<access origin="https://maps.googleapis.com/*" />
+		<access origin="https://*.googleapis.com/*" />
+		
+		
 		<access origin="geo://*" launch-external="true" />
 	
 		<allow-intent href="https://mototaps.com/*" />
+		<allow-intent href="https://maps.googleapis.com/*" />
 		<allow-intent href="tel:*"  launch-external="true" />
 		<allow-intent href="sms:*"  launch-external="true" />
 		<allow-intent href="mailto:*"  launch-external="true" />
@@ -23,6 +28,9 @@
 		
 
 		<allow-navigation href="https://mototaps.com/*" />
+		<allow-navigation href="https://*.mototaps.com/*" />
+		<allow-navigation href="https://maps.googleapis.com/*" />
+		<allow-navigation href="https://*.googleapis.com/*" />
 		
 	
         <allow-intent href="market:*" />
