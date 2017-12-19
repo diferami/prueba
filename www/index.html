@@ -5,43 +5,43 @@
     
     <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
+	
+	<meta http-equiv="Content-Security-Policy" content=" child-src *;img-src * data:; media-src * ;">
  
-    <script src="jquery-1.10.2.min.js"></script>
-    <script src="jquery.mobile-1.3.2.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.3.2.min.js"></script>
   
-    <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
 
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
 	<script type="text/javascript" charset="utf-8"> 
+
 	var model;
 	var platform;
 	var version;
 	var uuid;
+	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { enableHighAccuracy: true });
 
-	document.addEventListener("deviceready", onDeviceReady, false);
+	function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false); 
+    }
 
-    // device APIs are available
-    //
-    function onDeviceReady() {
+	function onDeviceReady() { 
 		model		=	device.model;
 		platform	=	device.platform;
 		version		=	device.version;
 		uuid		=	device.uuid;
-
-		var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-    }
+		
+		navigator.geolocation.clearWatch(watchID);
+	}
 
 
-</script> 
+	</script> 
 
 
 <style>
@@ -93,48 +93,58 @@
 
   function connect(lang) {
 	
-	var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'hidden=yes');
-// some time later...
-ref.show();
-
-	alert ('uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version);
-
-
-
-    $.mobile.loading("show");
+	var target = "_blank";
+    var options = "location=no";
+    
+	$.mobile.loading("show");
     $.ajax({
       type: 'GET',
-      url: "http://movil.mototaps.com/assets/connect/connect.php",
+      url: "https://mototaps.com/apps/assets/connect/connect.php",
       contentType: "application/json",
       dataType: 'json',
       jsonp : "callback",
       jsonpCallback: 'jsonpCallback',
       data : {cachehora : (new Date()).getTime()},
       }).done(function(response){
-	    
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
-		alert(response.state);
-		alert(params);
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
-          window.location.assign("http://movil.mototaps.com/"+lang+"/dashboard/index/?"+params);
+		 
+		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
+		 
+		  var ref = cordova.InAppBrowser.open(url, target, options);
+		  ref.addEventListener('loaderror', loadErrorCallBack);
+          
         }else{
           $.mobile.loading("hide");
           alert('Error 002:No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
+		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
+		 
+		  var ref = cordova.InAppBrowser.open(url, target, options);
+		  ref.addEventListener('loaderror', loadErrorCallBack);
+
         }
      }).fail(function(jqXHR, textStatus, errorThrown){
           $.mobile.loading("hide");
           alert('Error 001: No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
+		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
+		 
+		  var ref = cordova.InAppBrowser.open(url, target, options);
+		  ref.addEventListener('loaderror', loadErrorCallBack);
 
       }); 
     
   }
 
- 
+
+  function loadErrorCallBack(params) {
+	alert('Sorry we cannot open that page. Message from the server is : ' + params.message);
+   }
+
 </script>
 
 
-<title>Mi Taxi JJ</title>
+<title>Mototaps</title>
 </head>   
 
  <body onload="onLoad()">
@@ -150,18 +160,18 @@ ref.show();
   <br><br>
  <div data-role="article">
     <div data-role="section" align="center">
-      <img src="mototaps-logo.png" />
+      <img src="img/logo.png" />
     </div>
-      <br><br>  
+      <br><br>  <br>
     <div data-role="section" align="center">
-         <a href="#" onclick="connect('es');" id="urles"><img src="es.png" /></a>
+         <a href="#" onclick="connect('es');" id="urles"><img src="img/es.png" /></a>
          &nbsp;&nbsp;&nbsp;
-        <a href="#"  onclick="connect('en');" id="urlen"><img src="en.png" /></a>
+        <a href="#"  onclick="connect('en');" id="urlen"><img src="img/en.png" /></a>
     </div>
-
-	<a onClick="window.open('http://movil.mototaps.com', '_system, 'location=yes');">......Enlace....</a>
-	<p id="deviceProperties">Loading device properties...</p>
-
+	<div data-role="section" align="center">
+		<span id="status-message"></span>
+	</div>
+	
   </div>
 
   <div data-theme="h" data-role="footer" data-position="fixed" align="center">

@@ -1,28 +1,43 @@
-<widget id="com.mototaps.user" version="0.0.1">
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.mototaps.user" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Mototaps</name>
     <description>
-           Aplicación para solicitar servicio de Moto-Taxi, fácil, rápido, eficente y seguro. by Good People Tecnologies - 2017.
+       Aplicaci�n para la solicitud de Mototaxi.
     </description>
-    <author email="diferami@gmail.com" href="http://mototaps.com">
-            Good People Tecnologies - 2017
+    <author email="diferamo@gmail.com" href="https://mototaps.com">
+        Good People Technologies.
     </author>
-    
-	<content src="index.html" />
-    
-	<preference name="phonegap-version" value="cli-6.5.0" />
-	<plugin name="cordova-plugin-inappbrowser" />
-
-
-	
-	<preference name="Fullscreen" value="true" />
-    <preference name="WebViewBounce" value="true" />
-	<preference name="orientation" value="portrait" />
-	<preference name="fullscreen" value="true" />
-
-	<feature name="Device">
-        <param name="android-package" value="org.apache.cordova.device.Device" />
-    </feature>
-
-	<access origin="*" />
-
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="data:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon density="ldpi" src="res/icon/android/ldpi.png" />
+        <icon density="mdpi" src="res/icon/android/mdpi.png" />
+        <icon density="hdpi" src="res/icon/android/hdpi.png" />
+        <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
+        <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
+        <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="Fullscreen" value="true" />
+    <preference name="orientation" value="portrait" />
+    <engine name="android" spec="^6.3.0" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-geolocation" spec="^3.0.0" />
+    <plugin name="cordova-plugin-device" spec="^1.1.7" />
+    <plugin name="cordova-plugin-network-information" spec="^1.3.4" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
+    <plugin name="cordova-plugin-console" spec="^1.1.0" />
 </widget>
