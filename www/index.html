@@ -10,7 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
 	
-	<meta http-equiv="Content-Security-Policy" content=" child-src *;img-src * data:; media-src * ;">
  
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery.mobile-1.3.2.min.js"></script>
@@ -117,29 +116,24 @@
           
         }else{
           $.mobile.loading("hide");
-          alert('Error 002:No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
-		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
+          url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
 		 
 		  var ref = cordova.InAppBrowser.open(url, target, options);
-		  ref.addEventListener('loaderror', loadErrorCallBack);
-
+		  alert('Error 002:No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
+		  
         }
      }).fail(function(jqXHR, textStatus, errorThrown){
           $.mobile.loading("hide");
-          alert('Error 001: No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
-		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
+          url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
 		 
 		  var ref = cordova.InAppBrowser.open(url, target, options);
-		  ref.addEventListener('loaderror', loadErrorCallBack);
+		  alert('Error 001: No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
+		  
 
       }); 
     
   }
 
-
-  function loadErrorCallBack(params) {
-	alert('Sorry we cannot open that page. Message from the server is : ' + params.message);
-   }
 
 </script>
 
