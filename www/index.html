@@ -98,7 +98,7 @@
 	$.mobile.loading("show");
     $.ajax({
       type: 'GET',
-      url: "https://mototaps.com/apps/assets/connect/connect.php",
+      url: "http://mototaps.com/apps/assets/connect/connect.php",
       contentType: "application/json",
       dataType: 'json',
       jsonp : "callback",
@@ -108,7 +108,7 @@
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
-		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
+		  url = "http://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
 		  var ref = cordova.InAppBrowser.open(url, target, options);
         }else{
           $.mobile.loading("hide");
