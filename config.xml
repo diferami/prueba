@@ -10,18 +10,18 @@
     <content src="index.html" />
 	
 	<platform name="android">
-		<access origin="*" />
+		<access origin="https://mototaps.com/*" />
+		<access origin="geo://*" launch-external="true" />
 	
-		<allow-intent href="http://*/*" />
-		<allow-intent href="https://*/*" />
-		<allow-intent href="tel:*" />
-		<allow-intent href="sms:*" />
-		<allow-intent href="mailto:*" />
-		<allow-intent href="geo:*" />
+		<allow-intent href="https://mototaps.com/*" />
+		<allow-intent href="tel:*"  launch-external="true" />
+		<allow-intent href="sms:*"  launch-external="true" />
+		<allow-intent href="mailto:*"  launch-external="true" />
 
-		<allow-navigation href="http://*/*" />
-		<allow-navigation href="https://*/*" />
-		<allow-navigation href="data:*" />
+		
+
+		<allow-navigation href="https://mototaps.com/*" />
+		
 	
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/icon/android/ldpi.png" />
