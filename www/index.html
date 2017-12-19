@@ -108,31 +108,15 @@
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
-		 
 		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
-		 
 		  var ref = cordova.InAppBrowser.open(url, target, options);
-
-          
         }else{
           $.mobile.loading("hide");
-		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
-		 
-		  var ref = cordova.InAppBrowser.open(url, target, options);
-
 		  alert('Error 002:No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
-
-
         }
      }).fail(function(jqXHR, textStatus, errorThrown){
           $.mobile.loading("hide");
-		  url = "https://mototaps.com/apps/"+lang+"/dashboard/index/?"+params;
-		 
-		  var ref = cordova.InAppBrowser.open(url, target, options);
-
 		  alert('Error: No dispone de conexión a internet, por favor verifique su conexión y vuelva a intentarlo.');
-
-
       }); 
     
   }
